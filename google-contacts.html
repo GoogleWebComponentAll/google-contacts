@@ -1,0 +1,76 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../google-signin/google-signin.html">
+<link rel="import" href="../polymer-jsonp/polymer-jsonp.html">
+
+<!--
+Copyright (c) 2014 Google Inc. All rights reserved.
+
+LICENSE: github.com/GoogleWebComponents/google-contacts/blob/master/LICENSE
+AUTHOR(s): Addy Osmani
+-->
+
+<!--
+&lt;google-contacts&gt; is used to pull in contact information from the Google Contacts API
+
+#### Examples
+
+    <google-contacts clientId="..."></google-contacts>
+
+@class google-contacts
+@blurb A Polymer element for pulling in contact information from the Google Contacts API
+@status alpha
+@homepage http://googlewebcomponents.github.io/google-contacts
+-->
+
+<polymer-element name="google-contacts" attributes="clientId">
+    <template>
+        <google-signin clientId="{{clientId}}" scopes="https://www.googleapis.com/auth/contacts.readonly"></google-signin>
+
+        <google-signin-aware scopes="https://www.googleapis.com/auth/contacts.readonly" on-google-signin-aware-success="{{getContacts}}"></google-signin-aware>
+    </template>
+    </div>
+    </template>
+    <script>
+    (function() {
+
+        Polymer({
+
+             /**
+             * Called when the Contacts API returns results 
+             *
+             * @param {Object} result Google contacts
+             * @event google-contacts
+             */
+
+            /**
+             * a Google Developers clientId reference
+             *
+             * @attribute clientId
+             * @type string
+             */
+            clientId: '',
+            /**
+             * Contacts
+             *
+             * @property contacts
+             * @type array
+             */
+            contacts: [],
+            getContacts: function(response) {
+                var token = response.detail.result.access_token;
+                var jsonp = document.createElement('polymer-jsonp');
+                jsonp.url = "https://www.google.com/m8/feeds/contacts/default/full?access_token=" + token + "&max-results=5000&alt=json&callback=";
+                jsonp.addEventListener('polymer-response', function(event) {
+                    var feed = event.detail.response.feed;
+                    this.contacts = feed.entry;
+                    this.fire('google-contacts-retrieved', {
+                        contacts: feed.entry
+                    });
+                }.bind(this));
+                jsonp.go();
+
+            }
+        });
+    })();
+    </script>
+</polymer-element>

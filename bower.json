@@ -1,0 +1,32 @@
+{
+  "name": "google-signin",
+  "version": "0.1.0",
+  "description": "Web components to use the Google Contacts API",
+  "homepage": "http://googlewebcomponents.github.io/google-contacts",
+  "main": "google-contacts.html",
+  "authors": [
+    "Addy Osmani"
+  ],
+  "license": "Apache2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "../"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "contacts",
+    "google"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.4.2",
+    "google-signin": "GoogleWebComponents/google-signin#~0.1.0",
+    "polymer-jsonp": "Polymer/polymer-jsonp#master",
+    "font-roboto": "Polymer/font-roboto#~0.4.2"
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Copyright (c) 2014 Google Inc. All rights reserved. -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <title>google-contacts Demo</title>
+
+    <script src="../webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="google-contacts.html">
+
+    <!-- Demo only styles -->
+    <style>
+      * { font-family: 'RobotoDraft', 'Roboto', sans-serif; line-height:1.2; vertical-align:middle; }
+        .tile {
+            display: block;
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 2px;
+            width: 96%;
+            min-height: 20px;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        .tile .fullname {
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 0 0 3px 0;
+        }
+    </style>
+
+</head>
+
+<body unresolved>
+
+    <p>A `google-contacts` element looks like this:</p>
+
+      <div layout vertical center>
+          <template is="auto-binding" id="list" repeat="{{post in contacts}}">
+              <div class="tile">
+                  <div class="fullname">{{post.title.$t}}</div>
+                  <div>{{post.gd$email[0].address}}</div>
+              </div>
+          </template>
+      </div>
+
+    <p><google-contacts clientId="1054047045356-j8pgqgls9vdef3rl09hapoicumbte0bo.apps.googleusercontent.com"></google-contacts></p>
+
+    <script>
+      document.addEventListener('google-contacts-retrieved', function(e){
+        var list = document.querySelector('#list');
+        list.contacts = e.detail.contacts;
+      });
+    </script>
+</body>
+</html>
