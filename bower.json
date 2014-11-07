@@ -1,5 +1,5 @@
 {
-  "name": "google-signin",
+  "name": "google-contacts",
   "version": "0.1.0",
   "description": "Web components to use the Google Contacts API",
   "homepage": "http://googlewebcomponents.github.io/google-contacts",
