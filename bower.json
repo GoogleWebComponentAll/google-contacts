@@ -24,9 +24,9 @@
     "google"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.4.2",
+    "polymer": "Polymer/polymer#~0.5.1",
     "google-signin": "GoogleWebComponents/google-signin#~0.1.0",
-    "polymer-jsonp": "Polymer/polymer-jsonp#master",
-    "font-roboto": "Polymer/font-roboto#~0.4.2"
+    "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
+    "font-roboto": "Polymer/font-roboto#~0.5.1"
   }
 }
