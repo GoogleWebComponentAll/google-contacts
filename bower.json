@@ -1,5 +1,13 @@
 {
   "name": "google-contacts#gh-pages",
-  "private": true
+  "private": true,
+  "resolutions": {
+    "font-roboto": "~0.5.1",
+    "polymer": "~0.5.1",
+    "webcomponentsjs": "^0.5.0",
+    "core-component-page": "^0.5.0"
+  },
+  "dependencies": {
+    "google-contacts": "GoogleWebComponents/google-contacts#master"
+  }
 }
-

@@ -1,0 +1,41 @@
+{
+  "name": "google-contacts",
+  "description": "Web components to use the Google Contacts API",
+  "homepage": "http://googlewebcomponents.github.io/google-contacts",
+  "main": "google-contacts.html",
+  "authors": [
+    "Addy Osmani"
+  ],
+  "license": "Apache-2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "../"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "contacts",
+    "google"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1",
+    "google-signin": "GoogleWebComponents/google-signin#~0.1.0",
+    "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
+    "font-roboto": "Polymer/font-roboto#~0.5.1"
+  },
+  "_release": "3c0aa0ad9f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3c0aa0ad9f0bbf561456da047c6c3eb55741b03b"
+  },
+  "_source": "git://github.com/GoogleWebComponents/google-contacts.git",
+  "_target": "master",
+  "_originalSource": "GoogleWebComponents/google-contacts",
+  "_direct": true
+}
